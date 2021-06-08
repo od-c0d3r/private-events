@@ -6,17 +6,21 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.build_event(user_params)
+    @event = current_user.events.build(user_params)
     if @event.save
       redirect_to root_path
     else
       render :new
     end
   end
+
+  def show
+    @event = Event.find(params[:id])
+  end
 end
 
 private 
 
 def user_params
-   params.require(:event).permit(:date, :location) 
+   params.permit(:date, :location) 
 end
