@@ -1,0 +1,9 @@
+<h1>USER PAGE</h1>
+
+<ul>
+    <%= @user_events.each do |event| %>
+        <li> Date : <%= event.date %> </li>
+        <li> Location : <%= event.location %> </li>
+        <hr>
+    <% end %>
+</ul>
