@@ -15,12 +15,12 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find_by(user_params)
   end
 end
 
 private 
 
 def user_params
-   params.permit(:date, :location) 
+   params.permit(:date, :location, :id) 
 end

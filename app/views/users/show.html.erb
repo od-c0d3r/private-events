@@ -1,5 +1,7 @@
 <h1>USER PAGE</h1>
 
+<h2>Hello, <%= @user.name %></h2>
+
 <ul>
     <%= @user_events.each do |event| %>
         <li> Date : <%= event.date %> </li>
