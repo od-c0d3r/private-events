@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :events
   resources :tokens
   post 'events/new', to: 'events#create'
+  delete '/tokens', to: 'tokens#destroy'
 end

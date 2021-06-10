@@ -1,8 +1,17 @@
 <h1>All Events</h1>
-<ul>
-    <% @events.each do |event| %>
-        <li> Date : <%= event.date %> </li>
-        <li> Location : <%= event.location %> </li>
-        <hr>
-    <% end %>
-</ul>
+
+<% if future_events(@events).any? %>
+
+  <h3>Upcoming events</h3>
+
+<% end %>
+
+<%= render future_events(@events)%>
+
+<% if past_events(@events).any? %>
+
+  <h3>Past events</h3>
+
+  <%= render past_events(@events), past: true%>
+  
+<% end %>
