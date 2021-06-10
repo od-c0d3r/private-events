@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[index]
-  
+
   def index
-     @events = Event.all
+    @events = Event.all
   end
 
   def create
@@ -19,8 +19,8 @@ class EventsController < ApplicationController
   end
 end
 
-private 
+private
 
 def user_params
-   params.permit(:date, :location, :id) 
+  params.permit(:date, :location, :id)
 end

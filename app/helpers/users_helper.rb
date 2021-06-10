@@ -6,5 +6,4 @@ module UsersHelper
   def my_past_events
     current_user.attended_events.past
   end
-
 end

@@ -1,26 +1,23 @@
 <div>
   <hr>
   <p>
-    <h3><%=event.id  %>:
-      <%= event.location %>
+    <h3><%=event.id  %>:<br>
+      <%= event.location %><br>
       <%= event.date%>
     </h3>
-  
   </p>
-  <p>
-    Created by <%= event_creator(event)%>
-  </p>
+
   <% past = past || false %>
 
   <% if user_signed_in? %>
-    <% func = event_token(event) %>
+    <% func = event_(event) %>
     <% else %>
-    <% func = event_token_public_user(event) %>
+    <% func = event_public_user(event) %>
   <% end %>
 
-  <% if !attending?(event) && !past %>
+  <% if !attended?(event) && !past %>
     <%= link_to 'Attend',tokens_path(token: func), method: :post%>
-  <% elsif attending?(event) && !past%>
+  <% elsif attended?(event) && !past%>
     <strong>You are attending.</strong>
     <br>
     <br>
