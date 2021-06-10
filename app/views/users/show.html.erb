@@ -1,11 +1,13 @@
 <h1>USER PAGE</h1>
-
-<h2>Hello, <%= @user.name %></h2>
-
-<ul>
-    <% @user_events.each do |event| %>
-        <li> Date : <%= event.date %> </li>
-        <li> Location : <%= event.location %> </li>
-        <hr>
-    <% end %>
-</ul>
+ 
+<h1><%= @user.name %>'s events
+</h1>
+<%= render @user.events %>
+<% if my_future_events.any? %>
+  <h3>Upcoming events</h3>
+<% end %>
+<%= render my_future_events%>
+<% if my_past_events.any? %>
+  <h3>Past events</h3>
+  <%= render my_past_events, past: true%>
+<% end %>

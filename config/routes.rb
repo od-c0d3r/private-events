@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'events#index'
   resources :users
   resources :events
+  resources :tokens
   post 'events/new', to: 'events#create'
 end

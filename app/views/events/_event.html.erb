@@ -1,0 +1,24 @@
+<div>
+  <hr>
+  <p>
+    <h3><%=event.id  %>:
+      <%= event.location %>
+      <%= event.date%>
+    </h3>
+  
+  </p>
+  <p>
+    Created by <%= event_creator(event)%>
+  </p>
+  <% past = past || false %>
+  <% if !attending?(event) && !past %>
+    <%= link_to 'Attend',tokens_path(ticket: event_token(event)), method: :post ,class:"btn bg-success text-white"%>
+  <% elsif attending?(event) && !past%>
+    <strong>You are attending.</strong>
+    <br>
+    <br>
+    <%= link_to 'Cancel',tokens_path(token: event_token(event)), method: :delete ,class:"btn bg-success text-white" %>
+  <% end %>
+  <%= link_to 'Show', event ,class:"btn bg-success text-white"%>
+  <hr>
+</div>
