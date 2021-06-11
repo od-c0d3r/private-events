@@ -4,12 +4,8 @@ class UsersController < ApplicationController
     @user_events = @user.events
     @user_future_events = @user.attended_events.upcoming
     @user_past_events = @user.attended_events.past
-
   end
-
-
 end
-
 
 private
 

@@ -8,11 +8,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build(params[:event])
+    @event = current_user.events.build(user_params)
     if @event.save
       redirect_to root_path
     else
-      render :new
+      flash[:danger] = 'Error: Past Date or Empty Location'
+      redirect_to new_event_path
     end
   end
 
@@ -24,5 +25,5 @@ end
 private
 
 def user_params
-  params.require(:event).permit(:date, :location, :id)
+  params.permit(:date, :location, :id)
 end
