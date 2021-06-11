@@ -18,12 +18,4 @@ module EventsHelper
   def user_past_events
     current_user.attended_events.past
   end
-
-  def future_events(events)
-    events.upcoming
-  end
-
-  def past_events(events)
-    events.past
-  end
 end

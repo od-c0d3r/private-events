@@ -4,18 +4,18 @@
 </h1>
 <%= render @user.events %>
 
-<% if user_future_events.any? %>
+<% if @user_future_events.any? %>
 
   <h3>Upcoming events</h3>
 
 <% end %>
 
-<%= render user_future_events%>
+<%= render @user_future_events%>
 
-<% if user_past_events.any? %>
+<% if @user_past_events.any? %>
 
   <h3>Past events</h3>
 
-  <%= render user_past_events, past: true%>
+  <%= render @user_past_events, past: true%>
   
 <% end %>

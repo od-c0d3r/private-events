@@ -3,10 +3,12 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @future_events = @events.upcoming
+    @past_events = @events.past
   end
 
   def create
-    @event = current_user.events.build(user_params)
+    @event = current_user.events.build(params[:event])
     if @event.save
       redirect_to root_path
     else
@@ -22,5 +24,5 @@ end
 private
 
 def user_params
-  params.permit(:date, :location, :id)
+  params.require(:event).permit(:date, :location, :id)
 end
