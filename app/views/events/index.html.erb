@@ -1,17 +1,17 @@
 <h1>All Events</h1>
 
-<% if future_events(@events).any? %>
+<% if @future_events.any? %>
 
   <h3>Upcoming events</h3>
 
 <% end %>
 
-<%= render future_events(@events)%>
+<%= render @future_events%>
 
-<% if past_events(@events).any? %>
+<% if @past_events.any? %>
 
   <h3>Past events</h3>
 
-  <%= render past_events(@events), past: true%>
+  <%= render @past_events, past: true%>
   
 <% end %>
