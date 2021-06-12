@@ -1,8 +1,6 @@
 <h1>Make a New Event</h1>
 
-
-
-<%= form_with model: @event do |f| %>
+<%= form_with(model: @event, local: true) do |f| %>
     
      <%= f.label :date %><br>
      <%= f.date_field :date %> <br><br>

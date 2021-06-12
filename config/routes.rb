@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :events
   resources :tokens
+  get 'events/new', to: 'events#new'
   post 'events/new', to: 'events#create'
   delete '/tokens', to: 'tokens#destroy'
 end

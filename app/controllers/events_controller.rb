@@ -2,28 +2,31 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[index]
 
   def index
-    @events = Event.all
-    @future_events = @events.upcoming
-    @past_events = @events.past
+    @future_events = Event.all.upcoming
+    @past_events = Event.all.past
+  end
+  
+  def new
+    @event = Event.new
   end
 
   def create
-    @event = current_user.events.create(user_params)
+    @event = current_user.events.build(event_params)
     if @event.save
       redirect_to root_path
     else
       flash[:danger] = 'Error: Past Date or Empty Location'
-      redirect_to new_event_path
+      render :new
     end
   end
 
   def show
-    @event = Event.find_by(user_params)
+    @event = Event.find_by(params[:id])
   end
 end
 
 private
 
-def user_params
-  params.permit(:date, :location, :id)
+def event_params
+  params.require(:event).permit(:date, :location)
 end
