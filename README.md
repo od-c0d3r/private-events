@@ -1,24 +1,67 @@
-# README
+# Project: Private Events!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-* Ruby version
+build a site similar to a private Eventbrite which allows users to create events and then manage user signups. 
 
-* System dependencies
+https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/associations
 
-* Configuration
+A user can create events. A user can attend many events. An event can be attended by many users. 
 
-* Database creation
 
-* Database initialization
+## Getting started
 
-* How to run the test suite
+To get started with the app, first clone the repo and `cd` into the directory:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ git clone https://github.com/od-c0d3r/private-events.git
+$ cd private-events
+```
 
-* Deployment instructions
+Then install the needed packages (while skipping any Ruby gems needed only in production):
 
-* ...
+```
+$ bundle install
+```
+
+Next, migrate the database:
+
+```
+$ rails db:migrate
+```
+
+## Branches
+
+Simply check out the corresponding branch using `git checkout`:
+
+```
+$ git checkout <branch name>
+```
+
+## Authors
+
+👤 **Tanzila**
+
+![Tanzila's GitHub stats](https://github-readme-stats.vercel.app/api?username=tanzila-abedin&count_private=true&theme=dark&show_icons=true)
+
+- GitHub: [@githubhandle](https://github.com/tanzila-abedin)
+- Twitter: [@twitterhandle](https://twitter.com/TanzilaAbedin)
+- LinkedIn: [Profile](https://www.linkedin.com/in/tanzila-abedin-331440b2/)
+
+👤 **Omar R.**
+
+
+- GitHub: [@od-c0d3r](https://github.com/od-c0d3r)
+- Twitter: [@od-coder](https://twitter.com/od_coder)
+- LinkedIn: [Profile](https://linkedin.com/in/omarrashad)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/od-c0d3r/members-only/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!

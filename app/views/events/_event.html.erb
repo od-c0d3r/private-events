@@ -1,0 +1,28 @@
+<div>
+  <hr>
+  <p>
+    <h3><%=event.id  %>:<br>
+      <%= event.location %><br>
+      <%= event.date%>
+    </h3>
+  </p>
+
+  <% past = past || false %>
+
+  <% if user_signed_in? %>
+    <% func = event_(event) %>
+    <% else %>
+    <% func = event_public_user(event) %>
+  <% end %>
+
+  <% if !attended?(event) && !past && user_signed_in? %>
+    <%= link_to 'Attend',tokens_path(token: func), method: :post%>
+  <% elsif attended?(event) && !past%>
+    <strong>You are attending.</strong>
+    <br>
+    <br>
+    <%= link_to 'Cancel',tokens_path(token: func), method: :delete%>
+  <% end %>
+  <%= link_to 'Show', event%>
+  <hr>
+</div>
