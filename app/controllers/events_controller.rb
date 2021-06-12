@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @future_events = Event.all.upcoming
     @past_events = Event.all.past
   end
-  
+
   def new
     @event = Event.new
   end
