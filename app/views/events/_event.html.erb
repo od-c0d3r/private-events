@@ -15,7 +15,7 @@
     <% func = event_public_user(event) %>
   <% end %>
 
-  <% if !attended?(event) && !past %>
+  <% if !attended?(event) && !past && user_signed_in? %>
     <%= link_to 'Attend',tokens_path(token: func), method: :post%>
   <% elsif attended?(event) && !past%>
     <strong>You are attending.</strong>
